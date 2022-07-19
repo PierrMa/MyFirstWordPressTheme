@@ -187,11 +187,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/*function testtheme_myfunction(){
-	$content = get_the_content();
-	$count = substr_count( $content, '</p>' );
-	$middle = round($count/2, 0, PHP_ROUND_HALF_UP);
+/**
+ * function to add an image in the middle of a post
+ */
+function testtheme_myfunction(){
+	$content = get_the_content(); //get the content of the post
+	$count = substr_count( $content, '</p>' ); //count the number of paragraph
+	$middle = round($count/2, 0, PHP_ROUND_HALF_UP);//find the middle of the post
 
-	$image = get_field('advert_image', true, false);
-	return $image;
-}*/
+	$myimage = wp_get_attachment_image(get_field('advert_image'));//get an image using its ID
+	$my_paragraph=explode('<p>',$content);
+	$my_paragraph[$middle].='<p style="text-align:center;">'.$myimage.'</p>';
+	$content=implode($my_paragraph, '<p>');
+	echo $content;
+}

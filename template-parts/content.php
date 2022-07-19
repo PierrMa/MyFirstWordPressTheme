@@ -42,28 +42,6 @@
 			</div--><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-	
-
-
-
-
-	
-
-
-	<?php $image=get_field('advert_image');
-		if ($image):?>
-
-		<figure>
-			<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']);?>"/>
-		</figure>
-		<?php endif ?>
-
-
-
-
-
-
-
 
 	<?php testtheme_post_thumbnail(); ?>
 	
