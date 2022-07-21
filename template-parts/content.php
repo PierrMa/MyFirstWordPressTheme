@@ -9,7 +9,15 @@
 
 ?>
 
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<button type="button" id="disclaimer_button">Disclaimer</button>
+	
+	<!-- content to be access by js -->
+	<input type="hidden" id="phpcontent" value="<?php the_field('disclaimer');?>" />
+
 	<header class="entry-header pmf-entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -61,7 +69,6 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'testtheme' ),

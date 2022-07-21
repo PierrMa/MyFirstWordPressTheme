@@ -152,7 +152,7 @@ function testtheme_scripts() {
 	wp_enqueue_script( 'testtheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'testtheme-slideshow', get_template_directory_uri() . '/js/slideshow.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'testtheme-animatedButton', get_template_directory_uri() . '/js/animatedButton.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'testtheme-popup', get_template_directory_uri() . '/js/popup.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -194,7 +194,6 @@ function testtheme_myfunction(){
 	$content = get_the_content(); //get the content of the post
 	$count = substr_count( $content, '</p>' ); //count the number of paragraph
 	$middle = round($count/2, 0, PHP_ROUND_HALF_UP);//find the middle of the post
-
 	$myimage = wp_get_attachment_image(get_field('advert_image'));//get an image using its ID
 	$my_paragraph=explode('<p>',$content);
 	$my_paragraph[$middle].='<p style="text-align:center;">'.$myimage.'</p>';

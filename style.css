@@ -1649,3 +1649,18 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 	padding:20px;
 	border-top: 1px solid black;
 }
+
+/***********disclaimer******************/
+#disclaimer_button{
+	float:left;
+	position:fixed;
+	background-color: #f7c50f;
+    color: #800080;
+    font-weight: bold;
+    border: 10px groove #800080;
+    border-radius: 100%;
+    width: 150px;
+    cursor: pointer;
+	margin-left:5%;
+	height: 150px;
+}
