@@ -1652,8 +1652,9 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 
 /***********disclaimer******************/
 #disclaimer_button{
-	float:left;
 	position:fixed;
+	left:5%;
+	bottom:55%;
 	background-color: #f7c50f;
     color: #800080;
     font-weight: bold;
@@ -1661,6 +1662,17 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
     border-radius: 100%;
     width: 150px;
     cursor: pointer;
-	margin-left:5%;
 	height: 150px;
+}
+
+/*************backToTop_button************/
+#backToTop_button{
+	position:fixed;
+	right:15%;
+	bottom:55%;
+	background-color: #717171;
+	color:white;
+	height: 20px;
+	width:20px;
+	padding:5px 15px 15px 5px;
 }

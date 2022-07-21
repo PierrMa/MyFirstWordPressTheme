@@ -13,8 +13,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+	<!--button for the page -->
 	<button type="button" id="disclaimer_button">Disclaimer</button>
-	
+	<button type="button" id="backToTop_button">^</button>
+
 	<!-- content to be access by js -->
 	<input type="hidden" id="phpcontent" value="<?php the_field('disclaimer');?>" />
 
