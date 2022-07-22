@@ -56,6 +56,7 @@
 	<?php testtheme_post_thumbnail(); ?>
 	
 	<div class="entry-content post-entry-content">
+		<input type ="hidden" id="phpPostContent" value="<?php the_content()?>"/>
 		<?php
 		the_content(
 			sprintf(
@@ -78,6 +79,7 @@
 			)
 		);
 		?>
+		<span id="wordCount"></span>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer post-entry-footer">
