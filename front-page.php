@@ -51,6 +51,10 @@ get_header();
 		?>
 -->
 <!--------------My code------------->
+
+<!-- Get the date of the deadline -->
+<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
+
 		<div id="sectionContainer">
 				
 			<section id="leftSection">
@@ -144,10 +148,10 @@ get_header();
 					<div id="timerContainer">
 						<p style="margin-right:10px;">Time Left </p>
 						<div id="timer">
-							<p id="day" class="timeBox">10j</p>
-							<p id="hour" class="timeBox">24h </p>
-							<p id="minutes" class="timeBox">30min</p>
-							<p id="minutes" class="timeBox">40sec</p>
+							<p id="day" class="timeBox"></p>
+							<p id="hour" class="timeBox"> </p>
+							<p id="minute" class="timeBox"></p>
+							<p id="second" class="timeBox"></p>
 						</div>
 					</div>
 
