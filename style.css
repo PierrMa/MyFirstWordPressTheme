@@ -1113,6 +1113,7 @@ ul[id=menuFooter]{
 #sectionContainer{
 	display:flex;
 	justify-content:space-around;
+	position:relative;
 }
 
 #leftSection, #rightSection{
@@ -1120,7 +1121,7 @@ ul[id=menuFooter]{
 	display:flex;
 	flex-direction:column;
 	justify-content:space-around;
-	width:310px
+	width:310px;
 }
 #leftSection{
 	margin-left: 10px;
@@ -1691,3 +1692,14 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
     border-radius: 40px;
 	font-weight: bold;
 }
+
+.headroom {
+	will-change: transform;
+	transition: transform 200ms linear;
+  }
+  .headroom--pinned {
+	transform: translateY(0%);
+  }
+  .headroom--unpinned {
+	transform: translateY(-100%);
+  }

@@ -256,6 +256,11 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script>
+	AOS.init({duration:1200,});
+	const header = document.querySelector("#masthead");
+	const headroom = new Headroom(header);
+	headroom.init();
+</script>
 </body>
 </html>

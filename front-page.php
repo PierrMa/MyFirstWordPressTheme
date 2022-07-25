@@ -54,7 +54,7 @@ get_header();
 		<div id="sectionContainer">
 				
 			<section id="leftSection">
-				<form methode="post" action="treatment.php" class="loginBox">
+				<form methode="post" action="treatment.php" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -73,7 +73,7 @@ get_header();
 					</div>
 				</form>
 				
-				<div class="Top3SponsorListContainer">
+				<div class="Top3SponsorListContainer" data-aos="flip-left">
 					<div class="BlockBackground">
 						<h3 style="text-align:center; margin:0;">Top 3 of the best Sponsors</h3>
 						<ol>
@@ -84,7 +84,7 @@ get_header();
 					</div>
 				</div>
 				
-				<form methode="post" action="treatment.php" id="commentBox">
+				<form methode="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
 					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
@@ -165,13 +165,13 @@ get_header();
 			</section>
 			
 			<section id="rightSection">
-				<div id="sponsorButtonContainer">
+				<div id="sponsorButtonContainer" data-aos="fade-left">
 					<form method="post" action="sponsorForm.php">
 					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
 					</form>
 				</div>
 
-				<div class="internStatContainer">
+				<div class="internStatContainer" data-aos="flip-right">
 					<h3 style="text-align:center; margin:0;">Intern Stats</h3>
 					<ul>
 						<li>Nombre d'abonnées : <strong>1400</strong></li>
@@ -179,7 +179,7 @@ get_header();
 					</ul>
 				</div>
 
-				<div class="NumberOfLikesContainer">
+				<div class="NumberOfLikesContainer" data-aos="zoom-in">
 					<h3 style="text-align:center; margin:0;">Likes On social Media</h3>
 					<ul>
 						<a href="<?php echo get_field('social_network_1');?>"><li id="fb"><strong>54.6K<strong></li></a>
