@@ -55,6 +55,12 @@ get_header();
 <!-- Get the date of the deadline -->
 <input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
 
+<!-- display a risizable window-->
+<div id='outer-box'><div id="weather-window"></div></div>
+
+<!--button to reduce the windon-->
+<div id="resize-button" class="window-not-hidden"><</div>
+
 		<div id="sectionContainer">
 				
 			<section id="leftSection">

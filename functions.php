@@ -161,6 +161,7 @@ function testtheme_scripts() {
 	wp_enqueue_script( 'testtheme-aos', "https://unpkg.com/aos@2.3.1/dist/aos.js",array(),2.3,true);
 	wp_enqueue_script( 'testtheme-headroom', "https://unpkg.com/headroom.js", array(),'',true);
 	wp_enqueue_script( 'testtheme-timeleft',get_template_directory_uri() . "/js/timeLeft.js",array(), _S_VERSION, true );
+	wp_enqueue_script( 'testtheme-weather',get_template_directory_uri() . "/js/weather.js",array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
