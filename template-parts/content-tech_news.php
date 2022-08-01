@@ -75,10 +75,3 @@
             }
         }
     ?>
-
-</article>
-
-	<footer class="entry-footer post-entry-footer">
-		<?php testtheme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
