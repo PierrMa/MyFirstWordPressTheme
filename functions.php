@@ -209,3 +209,43 @@ function testtheme_myfunction(){
 	$content=implode($my_paragraph, '<p>');
 	echo $content;
 }
+
+function testtheme_scrapping_NS(string $pageToParse){
+	include('C:\Users\fpier\Local Sites\fructicash\app\public\wp-content\themes\testtheme\simple_html_dom.php');
+	
+	$html = file_get_html($pageToParse);
+
+	//get the link towards featured articles
+	$articles = $html ->find('section.section-article-list.section-article-list--hero a.card__link');
+	
+	//for each featured article, get the title, the image, the introduction paragraph, the author and the date of publication
+	$i=0;
+	foreach($articles as $article)
+	{
+		$url[$i] = 'https://'.parse_url($pageToParse,1).$article->href;//get the url to the page of the article
+		$content[$i] = file_get_html($url[$i]);//get the content of the page
+		$title[$i] = $content[$i]->find('h1.article__title',0)->plaintext;//get the title
+		$date[$i] = $content[$i]->find('span.published-date.font-sans-serif-xxs--regular',0);//get the date of publication
+		$author[$i] = $content[$i]->find('a.author.font-sans-serif-xxs--bold',0)->plaintext;//get the author
+		$image_src[$i] = $content[$i]->find('img.image.lazyload',0)->getAttribute('data-src');//get the image
+		$description[$i] = $content[$i]->find('p.article__strap',0)->plaintext;//get the description
+		$i++;
+	}
+
+	//get the link towards other articles
+    $articles = $html ->find('section[class="section-article-list section-article-list--three-col"] a.card__link');
+    foreach($articles as $article)
+	{
+		$url[$i] = 'https://'.parse_url($pageToParse,1).$article->href;//get the url to the page of the article
+		$content[$i] = file_get_html($url[$i]);//get the content of the page
+		$title[$i] = $content[$i]->find('h1.article__title',0)->plaintext;//get the title
+		$date[$i] = $content[$i]->find('span.published-date.font-sans-serif-xxs--regular',0);//get the date of publication
+		$author[$i] = $content[$i]->find('a.author.font-sans-serif-xxs--bold',0)->plaintext;//get the author
+		if(!$author[$i]){continue;}//if the article has no author, is probably  video that we don't need to list with the others articles
+		$image_src[$i] = $content[$i]->find('img.image.lazyload',0)->getAttribute('data-src');//get the image
+		$description[$i] = $content[$i]->find('p.article__strap',0)->plaintext;//get the description
+		$i++;
+	}
+	
+	return $info=['url' => $url, 'content'=>$content, 'title'=>$title, 'date'=>$date, 'author'=>$author, 'image_src'=>$image_src,'description'=>$description ];
+}
