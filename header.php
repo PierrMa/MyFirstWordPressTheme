@@ -21,6 +21,7 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php include('C:\Users\fpier\Local Sites\fructicash\app\public\wp-content\themes\testtheme\simple_html_dom.php');?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'testtheme' ); ?></a>
 
