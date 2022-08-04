@@ -9,8 +9,6 @@
 
 ?>
 
-
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<!--button for the page -->
@@ -56,7 +54,7 @@
 	<?php testtheme_post_thumbnail(); ?>
 	
 	<div class="entry-content post-entry-content">
-		<input type ="hidden" id="phpPostContent" value="<?php the_content()?>"/>
+		<input type ="hidden" id="phpPostContent" value="<?php get_the_content()?>"/>
 		<?php
 		the_content(
 			sprintf(

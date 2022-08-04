@@ -254,6 +254,7 @@ function testtheme_myfunction(){
 	It takes as parameter the result from the testtheme_scrapping
 */
 function list_articles($info){
+	echo "<article id='scrapping-section'>";
 	if($info){
 		echo "<h3 class='scrapping-section-subtitle'>Featured Articles from ".parse_url($info['url'][0],1)."</h3>";
 	}
@@ -282,4 +283,5 @@ function list_articles($info){
 		echo "<div class='scrapping-article-description'>".$info['description'][$i]."[...]</div>";//get the description
 		echo "</div>";
 	}
+	echo "</article>";
 }
