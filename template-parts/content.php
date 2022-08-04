@@ -54,7 +54,7 @@
 	<?php testtheme_post_thumbnail(); ?>
 	
 	<div class="entry-content post-entry-content">
-		<input type ="hidden" id="phpPostContent" value="<?php get_the_content()?>"/>
+		
 		<?php
 		the_content(
 			sprintf(
@@ -77,6 +77,7 @@
 			)
 		);
 		?>
+		<!-- <input type ="hidden" id="phpPostContent" value='<?php the_content()?>'/> -->
 		<span id="wordCount"></span>
 	</div><!-- .entry-content -->
 
