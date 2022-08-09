@@ -1121,6 +1121,14 @@ footer[id=colophon]{
 	}
 }
 
+footer{
+	font-weight: 400;
+}
+ul#menuFooter.menu{
+	margin:0;
+	padding: 0;
+}
+
 ul[id=menuFooter]{
  list-style-type:none;
  display:flex;
@@ -1132,20 +1140,25 @@ ul[id=menuFooter]{
 	display: flex;
 	justify-content:space-around;
 	flex-wrap:wrap;
-	padding:10px;
-	padding-left:100px;
-	padding-right:100px;
+	padding:4% 4% 1% 4%;
 }
 
 .sponsor-div img{
-	height:50px;
-	width:50px;
+	height:5vw;
+	width:5vw;
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.sponsor-div figure{
+	margin: 1%;
 }
 
 #copyright{
 	text-align:center;
 	padding-bottom: 5px;
 	margin-bottom: 0;
+	margin-top:0;
 }
 
 #sectionContainer{
