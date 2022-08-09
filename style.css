@@ -1161,6 +1161,11 @@ ul[id=menuFooter]{
 	margin-top:0;
 }
 
+.custom-logo-link img{
+	width:65%;
+	height:65%;
+}
+
 #sectionContainer{
 	display:flex;
 	justify-content:space-around;
@@ -1583,13 +1588,21 @@ header[class=page-header]{
 
 .pmf-entry-header{
 	text-align: center;
+	margin-top: 0;
+	margin-left:2.5%;
+	margin-right:2.5%;
+}
+
+.pmf-entry-meta{
+	display: flex;
+	justify-content: space-around;
 }
 
 .pmf-entry-header h1[class="entry-title"]{
-	font-size: 100px;
+	font-size: 15vw;
 	font-weight: 700;
 	color: rgba(247,197,15,1);
-	margin-bottom: 5px;
+	margin-bottom: 0.5%;
 }
 
 .pmf-entry-meta svg{
@@ -1615,13 +1628,13 @@ header[class=page-header]{
 	width: 100%;
 	margin-top:-10%;
 	padding-top:11%;
-	padding-left:25%;
-	padding-right:25%;
+	padding-left:15%;
+	padding-right:15%;
 	padding-bottom:1%;
 	line-height: 2em;
 	background-color: rgba(247,197,15,0.3);
 	position:relative;
-	z-index: -1;;
+	z-index: -1;
 }
 
 .single-post-thumbnail{
@@ -1640,17 +1653,21 @@ header[class=page-header]{
 
 .comments-area{
 	background-color: rgba(247,197,15,0.3);
-	padding: 2% 25% 3% 25%;
+	padding: 2% 15% 3% 15%;
 	margin-top:0%;
 }
 
 .comment-reply-title{
 	text-align: center;
-	font-size: 60px;
+	font-size: 2.5em;
 }
 
 .comment-form-comment{
 	color: #800080;
+}
+
+.comments-area input#url,.comments-area input#email, .comments-area input#author{
+	width: 100%;
 }
 
 .form-submit{
@@ -1674,7 +1691,6 @@ header[class=page-header]{
 .widget-area{
 	padding-left: 15%;
 	padding-right: 15%;
-	font-size: 2em;
 	padding-top: 5%;
 	border-top: 1px dashed #800080;
 }
@@ -1710,21 +1726,6 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 	border-top: 1px solid black;
 }
 
-/***********disclaimer******************/
-#disclaimer_button{
-	position:fixed;
-	left:5%;
-	bottom:55%;
-	background-color: #f7c50f;
-    color: #800080;
-    font-weight: bold;
-    border: 10px groove #800080;
-    border-radius: 100%;
-    width: 150px;
-    cursor: pointer;
-	height: 150px;
-}
-
 /*************backToTop_button************/
 #backToTop_button{
 	position:fixed;
@@ -1740,14 +1741,12 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 
 /***********Word count display***********/
 #wordCount{
-	position: absolute;
-	left:75%;
-	bottom:5%;
-    background-color: rgba(247,197,15,0.7);
-	padding: 0.2% 1.8% 0.2% 1.8%;
-    border: 5px solid #800080;
-    border-radius: 40px;
-	font-weight: bold;
+	text-align:center;
+	border-top: 0;
+	color:#800080;
+	font-weight:500;
+	font-size: large;
+	text-decoration:underline wavy;
 }
 
 /************Implementing headroom library***********/
@@ -1915,6 +1914,22 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 	#sectionContainer{
 		justify-content: center;
 	}
+
+	/***********disclaimer******************/
+	#disclaimer_button{
+		position:fixed;
+		left:5%;
+		bottom:55%;
+		background-color: #f7c50f;
+		color: #800080;
+		font-weight: bold;
+		font-size: 2.5vw;
+		border: 1.5vw groove #800080;
+		border-radius: 100%;
+		width: 20vw;
+		height: 20vw;
+		cursor: pointer;
+	}
 }
 
 @media screen and (min-width:801px) and (max-width:1000px) {
@@ -1928,11 +1943,41 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 		max-width: 300px;
 		margin-left: 5%;
 	}
+
+	/***********disclaimer******************/
+	#disclaimer_button{
+		position:fixed;
+		left:5%;
+		bottom:55%;
+		background-color: #f7c50f;
+		color: #800080;
+		font-weight: bold;
+		border: 10px groove #800080;
+		border-radius: 100%;
+		width: 150px;
+		height: 150px;
+		cursor: pointer;
+	}
 }
 
 @media screen and (min-width:1001px) {
 	section#leftSectionForMediumScreen{
 		display:none;
+	}
+
+	/***********disclaimer******************/
+	#disclaimer_button{
+		position:fixed;
+		left:5%;
+		bottom:55%;
+		background-color: #f7c50f;
+		color: #800080;
+		font-weight: bold;
+		border: 10px groove #800080;
+		border-radius: 100%;
+		width: 150px;
+		height: 150px;
+		cursor: pointer;
 	}
 }
 
