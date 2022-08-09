@@ -91,7 +91,39 @@ get_header();
 				</form>
 			</section>
 			
-			
+			<section id="leftSectionForMediumScreen">
+				<form methode="post" action="treatment.php" class="loginBox" data-aos="fade-right">
+					<div class="label-fieldContainer">
+						<p class="labelContainer" style="margin-right:10px">
+							<label for="id">Login </label><br>
+							<label for="mdp">Password </label>
+						</p>
+						
+						<p class="fieldContainer">
+							<input type="text" name="id" id="id"/><br>
+							<input type="password" name="mdp" id="mdp"/>
+						</p>
+					</div>
+					
+					<div class="buttonContainer">
+						<a href="<?php echo get_field('sign_in');?>"><input type="button" value="Sign in" id="signInButton"/></a>
+						<a href="<?php echo get_field('sign_up');?>"><input type="button" value="Sign up" id="signUpButton"/></a>
+					</div>
+				</form>
+				
+				<div id="sponsorButtonContainer">
+					<form method="post" action="sponsorForm.php">
+					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
+					</form>
+				</div>
+
+				<form methode="post" action="treatment.php" id="commentBox">
+					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
+					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
+					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
+				</form>
+
+			</section>
 			
 			<section id="middleSection">
 				<div id="slideShowSection">
@@ -133,12 +165,12 @@ get_header();
 
 				<div id="TASContainer">
 					<div id="timerContainer">
-						<p style="margin-right:10px;">Time Left </p>
+						<p id="timerContainerTitle">Time Left </p>
 						<div id="timer">
-							<p id="day" class="timeBox">10j</p>
-							<p id="hour" class="timeBox">24h </p>
-							<p id="minutes" class="timeBox">30min</p>
-							<p id="minutes" class="timeBox">40sec</p>
+							<span id="day" class="timeBox">10j</span>
+							<span id="hour" class="timeBox">24h </span>
+							<span id="minutes" class="timeBox">30min</span>
+							<span id="minutes" class="timeBox">40sec</span>
 						</div>
 					</div>
 
