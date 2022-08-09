@@ -66,7 +66,7 @@
 					<?php 
 						$left_image = get_field('left_image', 'option');
 						if(!empty($left_image)): ?>
-							<img src="<?php echo esc_url($left_image['url']); ?>" alt="<?php echo esc_attr($left_image['alt']); ?>" />
+							<img id="left_header_image" src="<?php echo esc_url($left_image['url']); ?>" alt="<?php echo esc_attr($left_image['alt']); ?>" />
 					<?php endif; ?>
 				</figure>
 			</div>
@@ -81,7 +81,7 @@
 					<?php 
 						$right_image = get_field('right_image', 'option');
 						if(!empty($right_image)): ?>
-							<img src="<?php echo esc_url($right_image['url']); ?>" alt="<?php echo esc_attr($right_image['alt']); ?>" />
+							<img id="right_header_image" src="<?php echo esc_url($right_image['url']); ?>" alt="<?php echo esc_attr($right_image['alt']); ?>" />
 					<?php endif; ?>
 				</figure>
 			</div>
@@ -106,7 +106,22 @@
 			);
 			?>
 		</nav><!-- #site-navigation--> 
+
+		<nav id="dropdown_header_menu"> 
+			<ul class="dropdown_header_menu_first_element">Menu</ul>
+			<ul class="dropdown_header_menu_content">
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'top-menu',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+				?>
+			</ul>
+		</nav>
 		<div class="choice_language_container">
+			<p><a href="<?php echo $french_url;?>">fr</a> <a href="<?php echo $english_url;?>">en</a></p>
 			<figure>
 				<?php
 					$french_url=get_field('french', 'option');
