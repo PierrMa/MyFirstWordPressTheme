@@ -1544,6 +1544,10 @@ ul[id=menuFooter]{
 	flex-wrap: wrap;
 }
 
+article.post.type-post{
+	min-width: 250px;
+}
+
 .archive .post{
 	height: auto;
 	width: 25%;
