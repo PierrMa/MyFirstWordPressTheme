@@ -58,4 +58,6 @@ for(n=0;n<modif_content.length;n++){
 }
 
 //displaying the wordcount
-document.getElementById('wordCount').innerText = "Number of words in the post content : "+count;
+if(document.getElementById('wordCount')){
+    document.getElementById('wordCount').innerText = "Number of words in the post content : "+count;
+}

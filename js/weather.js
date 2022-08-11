@@ -123,7 +123,7 @@ fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=4feac17434bf4f80992b9cc
                       wind : \ndirection : ${(data.dataseries[i].wind10m)['direction']}\nspeed : ${windSpeedMeaning((data.dataseries[i].wind10m)['speed'])}`
                       
         document.getElementById('weather-window').innerText=weather;
-        console.log(data);
+        
     }).catch(function(err){
         console.log('something went wrong',err);
     });

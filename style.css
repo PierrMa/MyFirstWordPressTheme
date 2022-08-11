@@ -1985,3 +1985,36 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 	}
 }
 
+#loginForm_sign_in{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #800080;
+	border-radius:40px;
+	padding:10px;
+	background-color:rgba(247,197,15,0.7);
+	max-width: 300px;
+	margin-top:5%;
+	margin-bottom: 5%;
+}
+
+p.login-username, p.login-password{
+	display: flex;
+	justify-content: space-between;
+}
+
+p.login-remember{
+	align-self: center;
+}
+
+p.login-submit{
+	align-self: center;
+}
+form p label{
+	margin-right: 10px;
+}
+
+div.entry-content{
+	display:flex;
+	justify-content: center;
+	align-content: center;
+}

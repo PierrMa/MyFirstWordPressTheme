@@ -51,10 +51,20 @@ get_header();
 		?>
 -->
 <!--------------My code------------->
+
+<!-- Get the date of the deadline -->
+<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
+
+<!-- display a risizable window-->
+<div id='outer-box'><div id="weather-window"></div></div>
+
+<!--button to reduce the window-->
+<div id="resize-button" class="window-not-hidden"><</div>
+
 		<div id="sectionContainer">
 				
 			<section id="leftSection">
-				<form methode="post" action="treatment.php" class="loginBox">
+				<form methode="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -68,12 +78,12 @@ get_header();
 					</div>
 					
 					<div class="buttonContainer">
-						<input type="submit" value="Sign in" id="signInButton"/>
-						<input type="submit" value="Sign up" id="signUpButton"/>
+						<button type="submit" value="Sign in" id="signInButton" formaction="<?php echo get_field('sign_in');?>">Sign in</button>
+						<button type="submit" value="Sign up" id="signUpButton" formaction="<?php echo get_field('sign_up');?>">Sign up</button>
 					</div>
 				</form>
 				
-				<div class="Top3SponsorListContainer">
+				<div class="Top3SponsorListContainer" data-aos="flip-left">
 					<div class="BlockBackground">
 						<h3 style="text-align:center; margin:0;">Top 3 of the best Sponsors</h3>
 						<ol>
@@ -84,15 +94,15 @@ get_header();
 					</div>
 				</div>
 				
-				<form methode="post" action="treatment.php" id="commentBox">
+				<form methode="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
-					<div id="commentButtonContainer">	<input type="submit" value="Comment!" id="commentButton"/> </div>
+					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
 				</form>
 			</section>
 			
 			<section id="leftSectionForMediumScreen">
-				<form methode="post" action="treatment.php" class="loginBox" data-aos="fade-right">
+				<form methode="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -133,19 +143,28 @@ get_header();
 						<!-- Full-width images with number and caption text -->
 						<div class="mySlides fade">
 						<div class="numbertext">1 / 3</div>
-						<img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage1.png" style="width:100%">
+						<a href="<?php echo get_field('slide1');?>">
+							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage1.png" style="width:100%"-->
+							<img src="<?php echo get_field('slide-1-image') ?>" style="width:100%">
+						</a>
 						<div class="text">Caption One</div>
 						</div>
 
 						<div class="mySlides fade">
 						<div class="numbertext">2 / 3</div>
-						<img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage2.png" style="width:100%">
+						<a href="<?php echo get_field('slide2');?>">
+							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage2.png" style="width:100%"-->
+							<img src="<?php echo get_field('slide-2-image') ?>" style="width:100%">
+						</a>
 						<div class="text">Caption Two</div>
 						</div>
 
 						<div class="mySlides fade">
 						<div class="numbertext">3 / 3</div>
-						<img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage3.png" style="width:100%">
+						<a href="<?php echo get_field('slide3');?>">
+							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage3.png" style="width:100%"-->
+							<img src="<?php echo get_field('slide-3-image') ?>" style="width:100%">
+						</a>
 						<div class="text">Caption Three</div>
 						</div>
 
@@ -163,38 +182,38 @@ get_header();
 					</div>
 				</div>
 
-				<div id="TASContainer">
+				<div id="TASContainer" style="background-image: url('<?php echo get_field('tas-image');?>');">
 					<div id="timerContainer">
 						<p id="timerContainerTitle">Time Left </p>
 						<div id="timer">
-							<span id="day" class="timeBox">10j</span>
-							<span id="hour" class="timeBox">24h </span>
-							<span id="minutes" class="timeBox">30min</span>
-							<span id="minutes" class="timeBox">40sec</span>
+							<span id="day" class="timeBox"></span>
+							<span id="hour" class="timeBox"> </span>
+							<span id="minute" class="timeBox"></span>
+							<span id="second" class="timeBox"></span>
 						</div>
 					</div>
 
 					<form method="post" action="TASForm.php">
-						<input type="submit" value="Play!" id="playButton"/>
+					<a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton"/></a>
 					</form>
 				</div>
 
-				<div id="CurrentEventContainer">
+				<div id="CurrentEventContainer" style="background-image:url('<?php echo get_field('event-image');?>');">
 					<form method="post" action="EventForm.php">
-						<input type="submit" value="Participate!" id="participateButton"/>
+					<a href="<?php echo get_field('participate');?>"><input type="button" value="Participate!" id="participateButton"/></a>
 					</form>
 				</div>
 
 			</section>
 			
 			<section id="rightSection">
-				<div id="sponsorButtonContainer">
+				<div id="sponsorButtonContainer" data-aos="fade-left">
 					<form method="post" action="sponsorForm.php">
-					<input type="submit" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/>
+					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
 					</form>
 				</div>
 
-				<div class="internStatContainer">
+				<div class="internStatContainer" data-aos="flip-right">
 					<h3 style="text-align:center; margin:0;">Intern Stats</h3>
 					<ul>
 						<li>Nombre d'abonnées : <strong>1400</strong></li>
@@ -202,12 +221,12 @@ get_header();
 					</ul>
 				</div>
 
-				<div class="NumberOfLikesContainer">
+				<div class="NumberOfLikesContainer" data-aos="zoom-in">
 					<h3 style="text-align:center; margin:0;">Likes On social Media</h3>
 					<ul>
-						<li id="fb"><strong>54.6K<strong></li>
-						<li id="tw"><strong>100K<strong></li>
-						<li id="snapchat"><strong>400K<strong></li>
+						<a href="<?php echo get_field('social_network_1');?>"><li id="fb"><strong>54.6K<strong></li></a>
+						<a href="<?php echo get_field('social_network_2');?>"><li id="tw"><strong>100K<strong></li></a>
+						<a href="<?php echo get_field('social_network_3');?>"><li id="snapchat"><strong>400K<strong></li></a>
 					</ul>
 				</div>
 

@@ -58,13 +58,13 @@ get_header();
 <!-- display a risizable window-->
 <div id='outer-box'><div id="weather-window"></div></div>
 
-<!--button to reduce the windon-->
+<!--button to reduce the window-->
 <div id="resize-button" class="window-not-hidden"><</div>
 
 		<div id="sectionContainer">
 				
 			<section id="leftSection">
-				<form methode="post" action="treatment.php" class="loginBox" data-aos="fade-right">
+				<form methode="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -78,8 +78,8 @@ get_header();
 					</div>
 					
 					<div class="buttonContainer">
-						<a href="<?php echo get_field('sign_in');?>"><input type="button" value="Sign in" id="signInButton"/></a>
-						<a href="<?php echo get_field('sign_up');?>"><input type="button" value="Sign up" id="signUpButton"/></a>
+						<button type="submit" value="Sign in" id="signInButton" formaction="<?php echo get_field('sign_in');?>">Sign in</button>
+						<button type="submit" value="Sign up" id="signUpButton" formaction="<?php echo get_field('sign_up');?>">Sign up</button>
 					</div>
 				</form>
 				
@@ -102,7 +102,7 @@ get_header();
 			</section>
 			
 			<section id="leftSectionForMediumScreen">
-				<form methode="post" action="treatment.php" class="loginBox" data-aos="fade-right">
+				<form methode="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -186,10 +186,10 @@ get_header();
 					<div id="timerContainer">
 						<p id="timerContainerTitle">Time Left </p>
 						<div id="timer">
-							<span id="day" class="timeBox">10j</span>
-							<span id="hour" class="timeBox">24h </span>
-							<span id="minutes" class="timeBox">30min</span>
-							<span id="minutes" class="timeBox">40sec</span>
+							<span id="day" class="timeBox"></span>
+							<span id="hour" class="timeBox"> </span>
+							<span id="minute" class="timeBox"></span>
+							<span id="second" class="timeBox"></span>
 						</div>
 					</div>
 
