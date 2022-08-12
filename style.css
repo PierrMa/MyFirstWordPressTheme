@@ -1855,11 +1855,9 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 		padding-bottom:1%;
 		text-align: center;
 		font-weight: 500;
+		cursor: pointer;
 	}
 
-	 #dropdown_header_menu:hover .dropdown_header_menu_content{
-		display:block;
-	} 
 	.dropdown_header_menu_content{
 		display:none;
 	}
@@ -1915,6 +1913,10 @@ div[class="wp-container-5 wp-block-columns alignfull"]{
 		display:none;
 	}
 
+	div#resize-button{
+		display:none;
+	}
+	
 	#sectionContainer{
 		justify-content: center;
 	}
