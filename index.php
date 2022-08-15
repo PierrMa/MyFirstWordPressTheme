@@ -64,7 +64,7 @@ get_header();
 		<div id="sectionContainer">
 				
 			<section id="leftSection">
-				<form methode="post" class="loginBox" data-aos="fade-right">
+				<form method="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -94,7 +94,7 @@ get_header();
 					</div>
 				</div>
 				
-				<form methode="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
+				<form method="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
 					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
@@ -102,7 +102,7 @@ get_header();
 			</section>
 			
 			<section id="leftSectionForMediumScreen">
-				<form methode="post" class="loginBox" data-aos="fade-right">
+				<form method="post" class="loginBox" data-aos="fade-right">
 					<div class="label-fieldContainer">
 						<p class="labelContainer" style="margin-right:10px">
 							<label for="id">Login </label><br>
@@ -127,7 +127,7 @@ get_header();
 					</form>
 				</div>
 
-				<form methode="post" action="treatment.php" id="commentBox">
+				<form method="post" action="treatment.php" id="commentBox">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
 					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>

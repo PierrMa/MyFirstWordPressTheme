@@ -1710,7 +1710,7 @@ header[class=page-header]{
 }
 
 /*impact only the background off the homepage*/
-body.home{
+body.home.page{
 	background-image: url("http://fructicash.local/wp-content/uploads/2022/07/siteBackground.png");
 }
 
@@ -2019,4 +2019,64 @@ div.entry-content{
 	display:flex;
 	justify-content: center;
 	align-content: center;
+}
+
+.signUpTilte{
+	text-align: center;
+	font-size: 4em;
+	color:#800080;
+	margin-top :5%;
+	margin-bottom: 0%;
+}
+
+body.page{
+	background: linear-gradient(rgba(247,197,15, 0.3), rgba(247,197,15, 1));
+}
+
+#formContainer{
+	display: flex;
+	justify-content: center;
+}
+
+#registerForm{
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	border:#800080 solid 0.5px;
+	border-radius: 20%;
+	width: 30%;
+	padding:3% 5% 3% 5%;
+}
+
+.usernameContainer, .pwdContainer, .emailContainer{
+	display:flex;
+	justify-content: space-between;
+}
+
+#sumbit-sign-up{
+	width:50%;
+	align-self: center;
+}
+
+#registrationErrorMessage{
+	text-align: center;
+	color: red;
+	font-size: large;
+	font-weight: 500;
+	margin-top: 3%;
+	margin-bottom: 0;
+}
+
+#yourAccountButton{
+	border:#800080 solid 1px;
+	background-color:rgba(247,197,15,0.7);
+}
+
+#yourAccountForm{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 5%;
 }
