@@ -1,3 +1,3 @@
 <?php
-    echo 'Bienvenu sur ton compte '.$_POST['username-registration']
+    echo 'Bienvenu sur ton compte '.$_GET['id'];
 ?>
