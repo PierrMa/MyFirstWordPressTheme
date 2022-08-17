@@ -72,8 +72,8 @@ get_header();
 						</p>
 						
 						<p class="fieldContainer">
-							<input type="text" name="id" id="id"/><br>
-							<input type="password" name="mdp" id="mdp"/>
+							<input type="text" name="id" id="id" required/><br>
+							<input type="password" name="mdp" id="mdp" required/>
 						</p>
 					</div>
 					
@@ -96,7 +96,7 @@ get_header();
 				
 				<form method="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
-					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
+					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField" required></textarea> </div>
 					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
 				</form>
 			</section>
@@ -110,8 +110,8 @@ get_header();
 						</p>
 						
 						<p class="fieldContainer">
-							<input type="text" name="id" id="id"/><br>
-							<input type="password" name="mdp" id="mdp"/>
+							<input type="text" name="id" id="id" required/><br>
+							<input type="password" name="mdp" id="mdp" required/>
 						</p>
 					</div>
 					
@@ -129,7 +129,7 @@ get_header();
 
 				<form method="post" action="treatment.php" id="commentBox">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
-					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField"></textarea> </div>
+					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField" required></textarea> </div>
 					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
 				</form>
 
