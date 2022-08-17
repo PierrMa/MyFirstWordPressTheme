@@ -1,13 +1,18 @@
-<?php get_header(); ?>
+<?php session_start(); get_header(); ?>
 
 <?php
     //check if the users exist already
     if(!(username_exists($_POST['id']) & email_exists($_POST['email-sign-up']))){//if this credential are not used already
         wp_create_user( $_POST['id'], $_POST['mdp'], $_POST['email-sign-up'] );//register the user
+        
+        $login = htmlspecialchars($_POST['id']);
+        $_SESSION['ID']=$login;
+        $password =  htmlspecialchars($_POST['mdp']);
+        $_SESSION['PWD']=$password;
+        
         echo "<br><br><p id='registrationErrorMessage'>Congratulation!!! You've been successfully registered!";//echo a congratulation message
         echo "<br><br>Click on the button below to go to your account</p><br><br>
-        <form action='http://fructicash.local/mon-compte' method='get' id='yourAccountForm'>
-            <input type='hidden' name='id' value='".$_POST['id']."'/>
+        <form action='http://fructicash.local/mon-compte' method='post' id='yourAccountForm'>
             <button type='submit' id='yourAccountButton'>Your Account</button>
         </form>";
     }else{
