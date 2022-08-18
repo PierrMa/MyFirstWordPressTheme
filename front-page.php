@@ -110,27 +110,27 @@ get_header();
 						</p>
 						
 						<p class="fieldContainer">
-							<input type="text" name="id" id="id" required/><br>
-							<input type="password" name="mdp" id="mdp" required/>
+							<input type="text" name="id" id="idMedium" required/><br>
+							<input type="password" name="mdp" id="mdpMedium" required/>
 						</p>
 					</div>
 					
 					<div class="buttonContainer">
-						<a href="<?php echo get_field('sign_in');?>"><input type="button" value="Sign in" id="signInButton"/></a>
-						<a href="<?php echo get_field('sign_up');?>"><input type="button" value="Sign up" id="signUpButton"/></a>
+						<a href="<?php echo get_field('sign_in');?>"><input type="button" value="Sign in" id="signInButtonMedium"/></a>
+						<a href="<?php echo get_field('sign_up');?>"><input type="button" value="Sign up" id="signUpButtonMedium"/></a>
 					</div>
 				</form>
 				
-				<div id="sponsorButtonContainer">
+				<div id="sponsorButtonContainerMedium">
 					<form method="post" action="sponsorForm.php">
-					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
+					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButtonMedium" class="pulled"/></a>
 					</form>
 				</div>
 
-				<form method="post" action="treatment.php" id="commentBox">
-					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
-					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField" required></textarea> </div>
-					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
+				<form method="post" action="treatment.php" id="commentBoxMedium">
+					<div id="commentLabelMedium"> <label for="commentField">Your opinion on the website :</label> </div>
+					<div id="commentFieldContainerMedium"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentFieldMedium" required></textarea> </div>
+					<div id="commentButtonContainerMedium">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButtonMedium"/> </div></a>
 				</form>
 
 			</section>
@@ -193,24 +193,18 @@ get_header();
 						</div>
 					</div>
 
-					<form method="post" action="TASForm.php">
 					<a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton"/></a>
-					</form>
 				</div>
 
 				<div id="CurrentEventContainer" style="background-image:url('<?php echo get_field('event-image');?>');">
-					<form method="post" action="EventForm.php">
 					<a href="<?php echo get_field('participate');?>"><input type="button" value="Participate!" id="participateButton"/></a>
-					</form>
 				</div>
 
 			</section>
 			
 			<section id="rightSection">
 				<div id="sponsorButtonContainer" data-aos="fade-left">
-					<form method="post" action="sponsorForm.php">
 					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
-					</form>
 				</div>
 
 				<div class="internStatContainer" data-aos="flip-right">

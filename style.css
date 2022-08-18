@@ -1205,7 +1205,7 @@ ul[id=menuFooter]{
 	flex-direction:column;
 	vertical-align:space-around;
 }
-#signInButton, #signUpButton{
+#signInButton, #signUpButton, #signInButtonMedium, #signUpButtonMedium{
 	background-color: #f7c50f;
 	color:#800080;
 	font-weight:bold;
@@ -1215,11 +1215,14 @@ ul[id=menuFooter]{
 	cursor:pointer;
 }
 
-#signInButton{
+#signInButton, #signInButtonMedium{
 	margin-right:10px;
 }
 
 #signInButton:hover, #signUpButton:hover, #id:hover, #mdp:hover, #commentButton:hover{
+	background-color:rgba(247,197,15,0.3);
+}
+#signInButtonMedium:hover, #signUpButtonMedium:hover, #idMedium:hover, #mdpMedium:hover, #commentButtonMedium:hover{
 	background-color:rgba(247,197,15,0.3);
 }
 
@@ -1247,7 +1250,7 @@ ul[id=menuFooter]{
 	padding:10px;
 }
 
-#commentBox{
+#commentBox,#commentBoxMedium{
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -1258,13 +1261,13 @@ ul[id=menuFooter]{
 	background-color:rgba(247,197,15,0.7);
 }
 
-#commentLabel
+#commentLabel, #commentLabelMedium
 {
 	font-weight:bold;
 	font-size:19px;
 }
 
-#commentButton{
+#commentButton, #commentButtonMedium{
 	background-color: #f7c50f;
 	color:#800080;
 	font-weight:bold;
@@ -1382,7 +1385,7 @@ ul[id=menuFooter]{
   .text {font-size: 11px}
 }
 
-#sponsorButtonContainer{
+#sponsorButtonContainer,#sponsorButtonContainerMedium{
 	border:solid black 1px;
 	padding:10px;
 	background-color:#333;
@@ -1390,7 +1393,7 @@ ul[id=menuFooter]{
 	height: 220px;
 }
 
-#sponsorButton{
+#sponsorButton, #sponsorButtonMedium{
 	height: 200px;
 	width:100%;
 	color:#800080;
@@ -1399,12 +1402,12 @@ ul[id=menuFooter]{
 	cursor:pointer;
 }
 
-#sponsorButton.pulled{
+#sponsorButton.pulled, #sponsorButtonMedium.pulled{
 	border:solid rgba(51,51,51,0.5) 1px;
 	background-color: #f7c50f;
 }
 
-#sponsorButton.pushed{
+#sponsorButton.pushed, #sponsorButtonMedium.pushed{
 	background-color:rgba(247,197,15,0.9);
 	border:solid rgba(51,51,51,1) 3px;
 	border-radius:6px;
@@ -1453,7 +1456,7 @@ ul[id=menuFooter]{
 	background-image: url("http://fructicash.local/wp-content/uploads/2022/07/TASimage.png");
 }*/
 
-#CurrentEventContainer form,#playButton{
+#CurrentEventContainer input,#playButton{
 	position:absolute;
 	right:20px;
 	bottom:20px;
@@ -2073,4 +2076,76 @@ body.page{
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 5%;
+}
+
+/*My account styles*/
+.accountSectionContainer{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.accountSectionContainer > div{
+	color:#800080;
+	min-width: 400px;
+	min-height: 300px; 
+	margin:1% 2% 1% 2%;
+	border: #800080 solid 1px;
+	background-size: 100% 100%;
+	border-radius: 40px;
+}
+
+#account-TASContainer, #account-CurrentEventContainer{
+	position:relative;
+}
+
+#account-CurrentEventContainer input{
+	position:absolute;
+	right:20px;
+	bottom:20px;
+}
+
+.amountBetContainer, .numberOfParticipantsContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.amountBetContainer p, .numberOfParticipantsContainer p{
+	background-color: #ddd;
+	font-weight: 500;
+	font-size: 1.5em;
+	border-radius: 40px;
+	padding:5px 10px 5px 10px;
+	margin:3%;
+}
+
+div.BetContainer, div.changeSubscriptionContainer{
+	border:solid black 1px;
+	padding:10px;
+	background-color:#333;
+	border-radius: 3px;
+	height: 220px;
+}
+
+#increaseButton,#changeSubscriptionButton{
+	height: 200px;
+	width:300px;
+	color:#800080;
+	font-size: 32px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#increaseButton.pulled, #changeSubscriptionButton.pulled{
+	border:solid rgba(51,51,51,0.5) 1px;
+	background-color: #f7c50f;
+}
+
+#increaseButton.pushed, #changeSubscriptionButton.pushed{
+	background-color:rgba(247,197,15,0.9);
+	border:solid rgba(51,51,51,1) 3px;
+	border-radius:6px;
 }
