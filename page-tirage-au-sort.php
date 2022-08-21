@@ -19,8 +19,11 @@ if(isset($_SESSION['ID']) && isset($_SESSION['PWD'])){
         </div>
         ';
     }else{
-        echo'<p style="text-align:center;"><br><br>Congratulation, you have just increased your chances to win by wagering <strong>'.$_POST['amountAdded'].'</strong>€<br><br></p>';
-        
+        echo'<p style="text-align:center;"><br><br>Congratulation, you have just increased your chances to win by wagering <strong>'.$_POST['amountAdded'].'</strong>€<br><br></p>
+        <form action="http://fructicash.local/registered" method="post" id="yourAccountForm">
+            <button type="submit" id="yourAccountButton">Back to your Account!</button>
+        </form>';//to modify
+
         //update the variable amount wagered of the user
         try
         {
@@ -43,7 +46,7 @@ if(isset($_SESSION['ID']) && isset($_SESSION['PWD'])){
             $valueToAdd=$amount[0];
         }
         $array1 = [$valueToAdd,$_POST['amountAdded']];
-        $_SESSION['amount_wagered'] = $array1;
+        $_SESSION['amount_wagered'] = array_sum($array1);
 
         //update of amount_wagered
         $updateQuery ='UPDATE account SET amount_wagered = :amount_wagered WHERE user_login = :id AND user_pass= :pwd';

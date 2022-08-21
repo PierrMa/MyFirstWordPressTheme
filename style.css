@@ -2070,6 +2070,7 @@ body.page{
 #yourAccountButton{
 	border:#800080 solid 1px;
 	background-color:rgba(247,197,15,0.7);
+	border-radius: 40px;
 }
 
 #yourAccountForm{
@@ -2149,4 +2150,33 @@ div.BetContainer, div.changeSubscriptionContainer{
 	background-color:rgba(247,197,15,0.9);
 	border:solid rgba(51,51,51,1) 3px;
 	border-radius:6px;
+}
+
+.formulaContainer{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.formulaBox{
+	background-color:rgba(247,197,15,0.9);
+	border: #800080 solid 1px;
+	border-radius: 40px;
+	text-align: center;
+	margin:2% 1% 2% 1%;
+	padding: 5px;
+	max-width:330px;
+}
+
+.formulaBox h3{
+ color:red;
+}
+
+.formulaBox h4{
+	color:#800080;
+}
+
+.formulaBox p{
+	color:teal;
 }

@@ -10,14 +10,14 @@
     //check the login and the password
     if(isset($_POST['id']) && isset($_POST['mdp'])){//if the field are not empty
         $login = htmlspecialchars($_POST['id']);
-        $_SESSION['ID']=$login;
         $password =  htmlspecialchars($_POST['mdp']);
-        $_SESSION['PWD']=$password;
 
         $check = wp_authenticate( $login, $password );
 
         if(!is_wp_error($check)) {//if the credentials are valid
             $user_login = $check->user_login;
+            $_SESSION['ID']=$login;
+            $_SESSION['PWD']=$password;
             header('Location: mon-compte?id='.$user_login);//redirect the users to its account
             exit();
         } else {//otherwise display the form again

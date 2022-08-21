@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+    session_start();
+    get_header(); 
+?>
 
 <!-- Get the date of the deadline -->
 <input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
@@ -24,12 +27,26 @@
 
         <div class="amountBetContainer" style="background-image:url('<?php echo get_field('bet_image');?>');">
             <p>Amount bet at the draw:</p>
-            <p>1456 €</p>
+            <p><?php echo $_SESSION['amount_wagered'].'€'; ?></p>
         </div>
 
+        <?php //get the number of rows of the table account what is similar to the number of participants
+            try
+            {
+                $mysqlClient = new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011', 'root', 'root');
+            }
+            catch(Exception $e)
+            {
+                die('Erreur : '.$e->getMessage());
+            }
+            $sqlQuery = 'SELECT * FROM account';
+            $statement = $mysqlClient->prepare($sqlQuery);
+            $statement->execute();
+            $nbOfParticipants = $statement->rowCount();
+        ?>
         <div class="numberOfParticipantsContainer" style="background-image:url('<?php echo get_field('number_of_participants');?>');">
             <p>Number of participants at the draw:</p>
-            <p>1500 participants</p>
+            <p><?php echo $nbOfParticipants; ?> participants</p>
         </div>
 
         <div class="BetContainer">
