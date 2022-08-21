@@ -37,7 +37,7 @@
         </div>
 
         <div class="changeSubscriptionContainer">
-            <a href="<?php echo get_field('change_subscription');?>"><button id="changeSubscriptionButton" class="pulled" style="width:380px;height:275px;text-align:center;">Change Subscription</button></a>
+            <a href="<?php echo get_field('change_subscription');?>"><button id="changeSubscriptionButton" class="pulled" style="width:380px;height:275px;text-align:center;">Subscribe!</button></a>
         </div>
     </div>
     
