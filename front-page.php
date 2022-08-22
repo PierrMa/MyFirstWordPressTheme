@@ -116,8 +116,8 @@ get_header();
 					</div>
 					
 					<div class="buttonContainer">
-						<a href="<?php echo get_field('sign_in');?>"><input type="button" value="Sign in" id="signInButtonMedium"/></a>
-						<a href="<?php echo get_field('sign_up');?>"><input type="button" value="Sign up" id="signUpButtonMedium"/></a>
+						<button type="submit" value="Sign in" id="signInButtonMedium" formaction="<?php echo get_field('sign_in');?>">Sign in</button>
+						<button type="submit" value="Sign up" id="signUpButtonMedium" formaction="<?php echo get_field('sign_up');?>">Sign up</button>
 					</div>
 				</form>
 				
@@ -192,8 +192,8 @@ get_header();
 							<span id="second" class="timeBox"></span>
 						</div>
 					</div>
-
-					<a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton"/></a>
+					<div id="php"></div><!--section to add the code to clear up the account table in the database when the time is over -->
+					<a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
 				</div>
 
 				<div id="CurrentEventContainer" style="background-image:url('<?php echo get_field('event-image');?>');">

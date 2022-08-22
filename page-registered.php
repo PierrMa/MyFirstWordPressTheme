@@ -18,7 +18,10 @@
                 </div>
             </div>
 
-            <a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton"/></a>
+            <!--section to add the code to clear up the account table in the database when the time is over -->
+            <div id="php"></div>
+
+            <a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
         </div>
 
         <div id="account-CurrentEventContainer" style="background-image:url('<?php echo get_field('event_image');?>');">
@@ -27,26 +30,42 @@
 
         <div class="amountBetContainer" style="background-image:url('<?php echo get_field('bet_image');?>');">
             <p>Amount bet at the draw:</p>
-            <p><?php echo $_SESSION['amount_wagered'].'€'; ?></p>
+            <p>
+                <?php 
+                    try
+                    {
+                        $mysqlClient = new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011', 'root', 'root');
+                    }
+                    catch(Exception $e)
+                    {
+                        die('Erreur : '.$e->getMessage());
+                    }
+                    $sqlQuery = 'SELECT amount_wagered FROM account WHERE user_login = :id AND user_pass =:pwd';
+                    $statement = $mysqlClient->prepare($sqlQuery);
+                    $statement->execute([
+                        'id'=>$_SESSION['ID'],
+                        'pwd'=>$_SESSION['PWD'],
+                    ]);
+                    $amounts = $statement->fetchAll();
+                    $trueAmount=0;
+                    foreach($amounts as $amount){
+                        $trueAmount = $amount;
+                    }
+                    echo $trueAmount[0].'€'; 
+                ?>
+            </p>
         </div>
 
         <?php //get the number of rows of the table account what is similar to the number of participants
-            try
-            {
-                $mysqlClient = new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011', 'root', 'root');
-            }
-            catch(Exception $e)
-            {
-                die('Erreur : '.$e->getMessage());
-            }
-            $sqlQuery = 'SELECT * FROM account';
+            
+            $sqlQuery = 'SELECT * FROM account WHERE amount_wagered!=0';
             $statement = $mysqlClient->prepare($sqlQuery);
             $statement->execute();
             $nbOfParticipants = $statement->rowCount();
         ?>
         <div class="numberOfParticipantsContainer" style="background-image:url('<?php echo get_field('number_of_participants');?>');">
             <p>Number of participants at the draw:</p>
-            <p><?php echo $nbOfParticipants; ?> participants</p>
+            <p><?php echo $nbOfParticipants; ?> participant(s)</p>
         </div>
 
         <div class="BetContainer">

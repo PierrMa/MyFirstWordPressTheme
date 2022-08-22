@@ -2058,7 +2058,7 @@ body.page{
 	align-self: center;
 }
 
-#registrationErrorMessage{
+#registrationErrorMessage, .successMessage{
 	text-align: center;
 	color: red;
 	font-size: large;
@@ -2067,7 +2067,7 @@ body.page{
 	margin-bottom: 0;
 }
 
-#yourAccountButton{
+#yourAccountButton, .messageButton{
 	border:#800080 solid 1px;
 	background-color:rgba(247,197,15,0.7);
 	border-radius: 40px;
@@ -2160,7 +2160,7 @@ div.BetContainer, div.changeSubscriptionContainer{
 }
 
 .formulaBox{
-	background-color:rgba(247,197,15,0.9);
+	background-color:rgba(247,197,15,0.7);
 	border: #800080 solid 1px;
 	border-radius: 40px;
 	text-align: center;
@@ -2179,4 +2179,10 @@ div.BetContainer, div.changeSubscriptionContainer{
 
 .formulaBox p{
 	color:teal;
+}
+
+.subscribeButton{
+	background-color:rgba(247,197,15,0.9);
+	border: #800080 solid 1px;
+	border-radius: 40px;
 }
