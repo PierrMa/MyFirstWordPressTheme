@@ -2186,3 +2186,126 @@ div.BetContainer, div.changeSubscriptionContainer{
 	border: #800080 solid 1px;
 	border-radius: 40px;
 }
+
+.eventTilte{
+	color:#800080;
+	font-size: 4em;
+}
+.pageEventContainer{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#videoEvent{
+	min-width:320;
+	min-height:240;
+	width:50%;
+	height: auto;
+	margin: 2% 0 2% 0;
+}
+
+.eventDescriptifContainer{
+	background-color:#eee;
+	text-align: center;
+	width: 80%;
+	padding: 3% 2% 3% 2%;
+}
+
+.eventDescriptifContainer h3{
+	color:#800080;
+}
+
+.eventDescriptifContainer p{
+	color:teal;
+}
+
+.eventDescriptifContainer img{
+	max-width: 128px;
+}
+
+#participateEventButton{
+	background-color:rgba(247,197,15,0.9);
+	border: #800080 solid 1px;
+	border-radius: 40px;
+}
+
+#slider{
+	height: 300px;
+	width:90%;
+	border: 3px solid black;
+	border-radius: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3%;
+	margin-bottom: 2%;; 
+}
+
+.container{
+	width:100%;
+}
+
+.container h3{
+	border-bottom: #111 3px solid;
+	color:#800080;
+	padding-bottom: 1%;
+}
+
+.slider-wrapper{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	width:100%;
+}
+
+.slider-wrapper i{
+	color: white;
+	font-size: 1rem;
+}
+
+.my-slider{
+	width:80%;
+}
+
+.slider-wrapper button{
+	width: 5%;
+}
+
+.previous, .next{
+	padding:2px;
+	width:30px;
+	height: 30px;
+	cursor:pointer;
+	border-radius:50%;
+	outline:none;
+	transition:0.7s eas-in-out;
+	border:3px solid white;
+	background-color: black;
+	box-shadow: 0 0 5px #bbb;
+}
+
+.previous:hover, .next:hover{
+	border:3px solid gray;
+}
+
+.slide-img{
+	width:100%;
+	background-position: center;
+	background-size: cover;
+	cursor:pointer;
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.slide-img:hover{
+	box-shadow: 0 0 0 200px rgba(0,0,0,0.9) inset;
+
+}
