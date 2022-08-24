@@ -12,14 +12,15 @@
         try{
             $mysqlClient = new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011', 'root', 'root');
         }catch(Exception $e){ 
-            die('Erreur : '.$e->getMessage());
+            die('Error : '.$e->getMessage());
         }
 
-        $sqlQuery = 'INSERT INTO pmf_comment(comment_author,comment_date,comment_content) VALUES(:comment_author,:comment_date,:comment_content)';
+        $sqlQuery = 'INSERT INTO pmf_comment(comment_author,comment_date,comment_time,comment_content) VALUES(:comment_author,:comment_date,:comment_time,:comment_content)';
         $insertComment = $mysqlClient->prepare($sqlQuery);
         $insertComment->execute([
             'comment_author'=>$_SESSION['ID'],
-            'comment_date'=>date("Y/m/d H:i:s"),
+            'comment_date'=>date("Y/m/d"),
+            'comment_time'=>date("H:i:s"),
             'comment_content'=>$_SESSION['comment'],
         ])or die(print_r($mysqlClient->errorInfo()));
 

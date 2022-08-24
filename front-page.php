@@ -12,6 +12,12 @@
  * @package TestTheme
  */
 
+try{
+	$mysqlClient= new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011','root','root');
+}catch(Exception $e){
+	die("Erreur".$e->getMessage());
+}
+
 get_header();
 ?>
 
@@ -198,6 +204,35 @@ get_header();
 
 				<div id="CurrentEventContainer" style="background-image:url('<?php echo get_field('event-image');?>');">
 					<a href="<?php echo get_field('participate');?>"><input type="button" value="Participate!" id="participateButton"/></a>
+				</div>
+
+				<div id="threelatestCommentContainer">
+					<h2>Lastest comments</h2>
+					<?php
+						$sqlRequest = 'SELECT comment_author,comment_date,comment_time,comment_content FROM pmf_comment';
+						$sqlResponse = $mysqlClient->prepare($sqlRequest);
+						$sqlResponse->execute();
+						$comments= $sqlResponse->fetchAll();
+
+						if($comments){
+							echo '<div class="comment-wrapper">';
+							echo '<p><span class="commentContent">'.$comments[count($comments)-1]['comment_content'].'</span><br>';
+							echo '<span class="commentData">On <span class="commentDate">'.$comments[count($comments)-1]['comment_date'].'</span>'.' at <span class="commentTime">'.$comments[count($comments)-1]['comment_time'].'</span> By <span class="commentAuthor">'.$comments[count($comments)-1]['comment_author'].'</span></span></p>';
+							echo '</div>';
+						}
+						if(count($comments)>1){
+							echo '<div class="comment-wrapper">';
+							echo '<p><span class="commentContent">'.$comments[count($comments)-2]['comment_content'].'</span><br>';
+							echo '<span class="commentData">On <span class="commentDate">'.$comments[count($comments)-2]['comment_date'].'</span>'.' at <span class="commentTime">'.$comments[count($comments)-2]['comment_time'].'</span> By <span class="commentAuthor">'.$comments[count($comments)-2]['comment_author'].'</span></span></p>';
+							echo '</div>';
+						}
+						if(count($comments)>2){
+							echo '<div class="comment-wrapper">';
+							echo '<p><span class="commentContent">'.$comments[count($comments)-3]['comment_content'].'</span><br>';
+							echo '<span class="commentData">On <span class="commentDate">'.$comments[count($comments)-3]['comment_date'].'</span>'.' at <span class="commentTime">'.$comments[count($comments)-3]['comment_time'].'</span> By <span class="commentAuthor">'.$comments[count($comments)-3]['comment_author'].'</span></span></p>';
+							echo '</div>';
+						}
+					?>
 				</div>
 
 			</section>
