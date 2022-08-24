@@ -12,13 +12,14 @@
  * @package TestTheme
  */
 
-try{
-	$mysqlClient= new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011','root','root');
-}catch(Exception $e){
-	die("Erreur".$e->getMessage());
-}
+	session_start();
+	try{
+		$mysqlClient= new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011','root','root');
+	}catch(Exception $e){
+		die("Erreur".$e->getMessage());
+	}
 
-get_header();
+	get_header();
 ?>
 
 	<main id="primary" class="site-main" id="index">
@@ -59,7 +60,7 @@ get_header();
 <!--------------My code------------->
 
 <!-- Get the date of the deadline -->
-<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
+<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline', 'option');?>" />
 
 <!-- display a risizable window-->
 <div id='outer-box'><div id="weather-window"></div></div>
@@ -243,10 +244,21 @@ get_header();
 				</div>
 
 				<div class="internStatContainer" data-aos="flip-right">
+					<?php 
+						$sqlQuery = 'SELECT * FROM account WHERE amount_wagered!=0';
+						$statement = $mysqlClient->prepare($sqlQuery);
+						$statement->execute();
+						$nbOfParticipants = $statement->rowCount();
+
+						$sqlQuery = 'SELECT * FROM account WHERE subscription_price!=0';
+						$statement = $mysqlClient->prepare($sqlQuery);
+						$statement->execute();
+						$nbOfSubscribers = $statement->rowCount();
+					?>
 					<h3 style="text-align:center; margin:0;">Intern Stats</h3>
 					<ul>
-						<li>Nombre d'abonnées : <strong>1400</strong></li>
-						<li>Nombre de participant au tirage au sort : <strong>400<strong></li>
+						<li>Nombre d'abonnées : <strong><?php echo $nbOfSubscribers; ?></strong></li>
+						<li>Nombre de participant au tirage au sort : <strong><?php echo $nbOfParticipants; ?><strong></li>
 					</ul>
 				</div>
 

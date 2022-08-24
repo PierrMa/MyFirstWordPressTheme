@@ -1,9 +1,10 @@
 <?php
 
     session_start();
+    date_default_timezone_set('Europe/Paris');
 
-    if(!isset($_SESSION['comment'])){
-        $_SESSION['comment']=$_POST['comment'];//save the comment in a variable befor going to another page
+    if(isset($_POST['comment'])){
+        $_SESSION['comment']=str_replace('\\','',$_POST['comment']);//save the comment in a variable before going to another page
     }
     
     if(isset($_SESSION['ID'])&&isset($_SESSION['PWD'])){//if the user is logged in

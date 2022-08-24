@@ -4,7 +4,7 @@
 ?>
 
 <!-- Get the date of the deadline -->
-<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline');?>" />
+<input type="hidden" id="deadline" value="<?php the_field('date_of_the_deadline', 'option');?>" />
 
     <div class="accountSectionContainer">
         <div id="account-TASContainer" style="background-image: url('<?php echo get_field('draw_image');?>');">
