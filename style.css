@@ -1172,7 +1172,7 @@ ul[id=menuFooter]{
 	position:relative;
 }
 
-#leftSection, #rightSection{
+#leftSection, #rightSection, #leftSectionForMediumScreen{
 	color:#800080;
 	display:flex;
 	flex-direction:column;
@@ -2067,10 +2067,11 @@ body.page{
 	margin-bottom: 0;
 }
 
-#yourAccountButton, .messageButton{
+#yourAccountButton, .messageButton,.pmfButton{
 	border:#800080 solid 1px;
 	background-color:rgba(247,197,15,0.7);
 	border-radius: 40px;
+	width: 128px;
 }
 
 #yourAccountForm{
@@ -2308,4 +2309,19 @@ div.BetContainer, div.changeSubscriptionContainer{
 .slide-img:hover{
 	box-shadow: 0 0 0 200px rgba(0,0,0,0.9) inset;
 
+}
+
+#commentForm{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around ;
+	width:60%;
+	margin-bottom: 3%;
+	margin-top: 3%;
+	align-self: center;
+}
+
+.pageCommentContainer{
+	display: flex;
+	flex-direction: column;
 }

@@ -97,7 +97,7 @@ get_header();
 				<form method="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField" required></textarea> </div>
-					<div id="commentButtonContainer">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButton"/> </div></a>
+					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment');?>">Comment!</button></div>
 				</form>
 			</section>
 			
@@ -127,10 +127,10 @@ get_header();
 					</form>
 				</div>
 
-				<form method="post" action="treatment.php" id="commentBoxMedium">
+				<form method="post" id="commentBoxMedium">
 					<div id="commentLabelMedium"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainerMedium"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentFieldMedium" required></textarea> </div>
-					<div id="commentButtonContainerMedium">	<a href="<?php echo get_field('comment');?>"><input type="button" value="Comment!" id="commentButtonMedium"/> </div></a>
+					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment');?>">Comment!</button></div>
 				</form>
 
 			</section>

@@ -18,8 +18,13 @@
             $user_login = $check->user_login;
             $_SESSION['ID']=$login;
             $_SESSION['PWD']=$password;
-            header('Location: mon-compte?id='.$user_login);//redirect the users to its account
-            exit();
+            if(!isset($_SESSION['comment'])){
+                header("Location: mon-compte");//redirect the users to its account
+                exit();
+            }else{
+                header('Location: comment');//redirect the users to the page that treat the comment
+                exit();
+            }
         } else {//otherwise display the form again
             get_header();
             echo '<h1 class="signUpTilte">'.get_the_title().'</h1>';
