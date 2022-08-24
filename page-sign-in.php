@@ -18,11 +18,14 @@
             $user_login = $check->user_login;
             $_SESSION['ID']=$login;
             $_SESSION['PWD']=$password;
-            if(!isset($_SESSION['comment'])){
-                header("Location: mon-compte");//redirect the users to its account
+            if(isset($_SESSION['comment'])){
+                header('Location: comment');//redirect the users to the page that treat the comment
+                exit();
+            }elseif(isset($_SESSION['sponsor'])){
+                wp_redirect("http://fructicash.local/sponsor");//let the user add a new sponsored
                 exit();
             }else{
-                header('Location: comment');//redirect the users to the page that treat the comment
+                header("Location: mon-compte");//redirect the users to its account
                 exit();
             }
         } else {//otherwise display the form again

@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     date_default_timezone_set('Europe/Paris');
 
@@ -40,5 +39,4 @@
         wp_redirect("http://fructicash.local/sign-in");
         exit();
     }
-
 ?>
