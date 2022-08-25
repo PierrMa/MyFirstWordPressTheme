@@ -22,6 +22,7 @@
                 header('Location: comment');//redirect the users to the page that treat the comment
                 exit();
             }elseif(isset($_SESSION['sponsor'])){
+                $_SESSION['sponsor']=false;
                 wp_redirect("http://fructicash.local/sponsor");//let the user add a new sponsored
                 exit();
             }else{

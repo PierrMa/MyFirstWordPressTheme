@@ -2071,7 +2071,9 @@ body.page{
 	border:#800080 solid 1px;
 	background-color:rgba(247,197,15,0.7);
 	border-radius: 40px;
-	width: 128px;
+	flex: 1;
+	margin-left: 2%;
+	margin-right: 2%;
 }
 
 #yourAccountForm{
