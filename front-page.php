@@ -93,10 +93,121 @@
 				<div class="Top3SponsorListContainer" data-aos="flip-left">
 					<div class="BlockBackground">
 						<h3 style="text-align:center; margin:0;">Top 3 of the best Sponsors</h3>
+						
+						<?php //retrieving of the 3 best sponsor in the database
+							$sqlQuery = 'SELECT user_login, number_of_sponsored_2, number_of_sponsored_5, number_of_sponsored_10, number_of_sponsored_30, number_of_sponsored_50, number_of_sponsored_VIP FROM account';
+							$sqlResponse = $mysqlClient->prepare($sqlQuery);
+							$sqlResponse->execute()or die(print_r($mysqlClient->errorInfo()));
+							$users = $sqlResponse->fetchAll();
+
+							$firstSponsor;
+							$secondSponsor;
+							$thirdSponsor;
+							$greatestNum=0;
+							$greatestNum2=0;
+							$greatestNum3=0;
+							
+							$numUsers=count($users);
+							if($numUsers<=0){
+								$firstSponsor="Nobody";
+								$secondSponsor="Nobody";
+								$thirdSponsor="Nobody";
+							}elseif($numUsers==1){
+								foreach($users as $user){
+									//sum the different types of sponsored people
+									$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+									$sumSponsored=array_sum($array1);
+									if($sumSponsored>=$greatestNum){
+										$greatestNum=$sumSponsored;
+										$firstSponsor=$user['user_login'];
+									}
+								}
+								if($greatestNum==0){
+									$firstSponsor="Nobody";
+								}
+								$secondSponsor="Nobody";
+								$thirdSponsor="Nobody";
+							}elseif($numUsers==2){
+								foreach($users as $user){
+									//sum the different types of sponsored people
+									$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+									$sumSponsored=array_sum($array1);
+									if($sumSponsored>=$greatestNum){
+										$greatestNum=$sumSponsored;
+										$firstSponsor=$user['user_login'];
+									}
+								}
+								if($greatestNum==0){
+									$firstSponsor="Nobody";
+									$secondSponsor="Nobody";
+								}else{
+									//determine the second greatest sponsor
+									foreach($users as $user){
+										//sum the different types of sponsored people
+										$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+										$sumSponsored=array_sum($array1);
+										if($sumSponsored>=$greatestNum2 && $sumSponsored<=$greatestNum){
+											if($user['user_login']!=$firstSponsor){
+												$greatestNum2=$sumSponsored;
+												$secondSponsor=$user['user_login'];
+											}
+										}
+										if($greatestNum2==0){$secondSponsor="Nobody";}
+									}
+								}
+								$thirdSponsor="Nobody";
+							}else{
+								foreach($users as $user){
+									//sum the different types of sponsored people
+									$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+									$sumSponsored=array_sum($array1);
+									if($sumSponsored>=$greatestNum){
+										$greatestNum=$sumSponsored;
+										$firstSponsor=$user['user_login'];
+									}
+								}
+								if($greatestNum==0){
+									$firstSponsor="Nobody";
+									$secondSponsor="Nobody";
+									$thirdSponsor="Nobody";
+								}else{
+									//determine the second greatest sponsor
+									foreach($users as $user){
+										//sum the different types of sponsored people
+										$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+										$sumSponsored=array_sum($array1);
+										if($sumSponsored>=$greatestNum2 && $sumSponsored<=$greatestNum){
+											if($user['user_login']!=$firstSponsor){
+												$greatestNum2=$sumSponsored;
+												$secondSponsor=$user['user_login'];
+											}
+										}
+										if($greatestNum2==0){
+											$secondSponsor="Nobody";
+											$thirdSponsor="Nobody";
+										}else{
+											//determine the third greatest sponsor
+											foreach($users as $user){
+												//sum the different types of sponsored people
+												$array1=[$user['number_of_sponsored_2'],$user['number_of_sponsored_5'],$user['number_of_sponsored_10'],$user['number_of_sponsored_30'],$user['number_of_sponsored_50'],$user['number_of_sponsored_VIP']];
+												$sumSponsored=array_sum($array1);
+												if($sumSponsored>=$greatestNum3 && $sumSponsored<=$greatestNum2){
+													if($user['user_login']!=$secondSponsor){
+														$greatestNum3=$sumSponsored;
+														$thirdSponsor=$user['user_login'];
+													}
+												}
+												if($greatestNum3==0){$thirdSponsor="Nobody";}
+											}
+										}
+									}
+								}
+							}
+						?>
 						<ol>
-							<li>First Sponsor</li>
-							<li>Second Sponsor</li>
-							<li>Third Sponsor</li>
+							<li><?php echo $firstSponsor; ?></li>
+							<li><?php echo $secondSponsor; ?></li>
+							<li><?php echo $thirdSponsor; ?></li>
 						</ol>
 					</div>
 				</div>

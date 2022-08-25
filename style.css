@@ -1146,8 +1146,8 @@ ul[id=menuFooter]{
 .sponsor-div img{
 	height:5vw;
 	width:5vw;
-	max-width: 50px;
-	max-height: 50px;
+	max-width: auto;
+	max-height: 64px;
 }
 
 .sponsor-div figure{
@@ -1425,16 +1425,16 @@ ul[id=menuFooter]{
 }
 
 .NumberOfLikesContainer ul #fb{
-	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/07/fbIcone.png');
+	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/08/logoFB-e1661424590852.png');
 	margin-right:20px;
 }
 
 .NumberOfLikesContainer ul #tw{
-	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/07/twIcone-e1657299550989.png');
+	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/08/logo-twitter-png-5860-e1661424869427.png');
 }
 
 .NumberOfLikesContainer ul #snapchat{
-	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/07/snapchatIcon-e1657299578117.png');
+	list-style-image: url('http://fructicash.local/wp-content/uploads/2022/08/snapchat-logo-png-1450-e1661424935861.png');
 }
 
 #CurrentEventContainer, #TASContainer{
