@@ -77,7 +77,7 @@
         <h4>Bonus</h4>
         <p>+120€ for each 4 people sponsored that is a VIP</p>
         <form method="post">
-            <input type='hidden' value='100+' name='fee'/>
+            <input type='hidden' value='100' name='fee'/>
             <button type="sumbit" formaction="http://fructicash.local/subscription-treatment/" id="subscribeButtonVIP" class="subscribeButton"> Subscribe! </button>
         </form>
     </div>

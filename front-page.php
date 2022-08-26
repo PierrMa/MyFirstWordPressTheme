@@ -84,9 +84,14 @@
 						</p>
 					</div>
 					
+					<?php //allow to hide the sign in button if the user is already logged in
+						if(isset($_SESSION['ID'])&&isset($_SESSION['PWD'])){
+							$displayButton = "display:none;";
+						}else{$displayButton = "display:block;";} 
+					?>
 					<div class="buttonContainer">
-						<button type="submit" value="Sign in" id="signInButton" formaction="<?php echo get_field('sign_in');?>">Sign in</button>
-						<button type="submit" value="Sign up" id="signUpButton" formaction="<?php echo get_field('sign_up');?>">Sign up</button>
+						<button style="<?php echo $displayButton; ?>" type="submit" value="Sign in" id="signInButton" formaction="<?php echo get_field('sign_in', 'option');?>">Sign in</button>
+						<button type="submit" value="Sign up" id="signUpButton" formaction="<?php echo get_field('sign_up', 'option');?>">Sign up</button>
 					</div>
 				</form>
 				
@@ -215,7 +220,7 @@
 				<form method="post" action="treatment.php" id="commentBox" data-aos="zoom-out">
 					<div id="commentLabel"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainer"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentField" required></textarea> </div>
-					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment');?>">Comment!</button></div>
+					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment', 'option');?>">Comment!</button></div>
 				</form>
 			</section>
 			
@@ -234,21 +239,21 @@
 					</div>
 					
 					<div class="buttonContainer">
-						<button type="submit" value="Sign in" id="signInButtonMedium" formaction="<?php echo get_field('sign_in');?>">Sign in</button>
-						<button type="submit" value="Sign up" id="signUpButtonMedium" formaction="<?php echo get_field('sign_up');?>">Sign up</button>
+						<button type="submit" value="Sign in" id="signInButtonMedium" formaction="<?php echo get_field('sign_in', 'option');?>">Sign in</button>
+						<button type="submit" value="Sign up" id="signUpButtonMedium" formaction="<?php echo get_field('sign_up', 'option');?>">Sign up</button>
 					</div>
 				</form>
 				
 				<div id="sponsorButtonContainerMedium">
 					<form method="post" action="sponsorForm.php">
-					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButtonMedium" class="pulled"/></a>
+					<a href="<?php echo get_field('sponsor', 'option');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButtonMedium" class="pulled"/></a>
 					</form>
 				</div>
 
 				<form method="post" id="commentBoxMedium">
 					<div id="commentLabelMedium"> <label for="commentField">Your opinion on the website :</label> </div>
 					<div id="commentFieldContainerMedium"> <textarea rows="10" cols="30" name="comment" placeholder="This site is really awesome!" id="commentFieldMedium" required></textarea> </div>
-					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment');?>">Comment!</button></div>
+					<div id="commentButtonContainerMedium"> <button type="submit" id="commentButtonMedium" formaction="<?php echo get_field('comment', 'option');?>">Comment!</button></div>
 				</form>
 
 			</section>
@@ -261,7 +266,7 @@
 						<!-- Full-width images with number and caption text -->
 						<div class="mySlides fade">
 						<div class="numbertext">1 / 3</div>
-						<a href="<?php echo get_field('slide1');?>">
+						<a href="<?php echo get_field('slide1', 'option');?>">
 							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage1.png" style="width:100%"-->
 							<img src="<?php echo get_field('slide-1-image') ?>" style="width:100%">
 						</a>
@@ -270,7 +275,7 @@
 
 						<div class="mySlides fade">
 						<div class="numbertext">2 / 3</div>
-						<a href="<?php echo get_field('slide2');?>">
+						<a href="<?php echo get_field('slide2', 'option');?>">
 							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage2.png" style="width:100%"-->
 							<img src="<?php echo get_field('slide-2-image') ?>" style="width:100%">
 						</a>
@@ -279,7 +284,7 @@
 
 						<div class="mySlides fade">
 						<div class="numbertext">3 / 3</div>
-						<a href="<?php echo get_field('slide3');?>">
+						<a href="<?php echo get_field('slide3', 'option');?>">
 							<!--img src="http://fructicash.local/wp-content/uploads/2022/07/slideshowImage3.png" style="width:100%"-->
 							<img src="<?php echo get_field('slide-3-image') ?>" style="width:100%">
 						</a>
@@ -311,11 +316,11 @@
 						</div>
 					</div>
 					<div id="php"></div><!--section to add the code to clear up the account table in the database when the time is over -->
-					<a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
+					<a href="<?php echo get_field('play', 'option');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
 				</div>
 
 				<div id="CurrentEventContainer" style="background-image:url('<?php echo get_field('event-image');?>');">
-					<a href="<?php echo get_field('participate');?>"><input type="button" value="Participate!" id="participateButton"/></a>
+					<a href="<?php echo get_field('participate', 'option');?>"><input type="button" value="Participate!" id="participateButton"/></a>
 				</div>
 
 				<div id="threelatestCommentContainer">
@@ -351,7 +356,7 @@
 			
 			<section id="rightSection">
 				<div id="sponsorButtonContainer" data-aos="fade-left">
-					<a href="<?php echo get_field('sponsor');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
+					<a href="<?php echo get_field('sponsor', 'option');?>"><input type="button" name="sponsorButton" value="Sponsor!" id="sponsorButton" class="pulled"/></a>
 				</div>
 
 				<div class="internStatContainer" data-aos="flip-right">
@@ -376,9 +381,9 @@
 				<div class="NumberOfLikesContainer" data-aos="zoom-in">
 					<h3 style="text-align:center; margin:0;">Likes On social Media</h3>
 					<ul>
-						<a href="<?php echo get_field('social_network_1');?>"><li id="fb"><strong>54.6K<strong></li></a>
-						<a href="<?php echo get_field('social_network_2');?>"><li id="tw"><strong>100K<strong></li></a>
-						<a href="<?php echo get_field('social_network_3');?>"><li id="snapchat"><strong>400K<strong></li></a>
+						<a href="<?php echo get_field('social_network_1', 'option');?>"><li id="fb"><strong>54.6K<strong></li></a>
+						<a href="<?php echo get_field('social_network_2', 'option');?>"><li id="tw"><strong>100K<strong></li></a>
+						<a href="<?php echo get_field('social_network_3', 'option');?>"><li id="snapchat"><strong>400K<strong></li></a>
 					</ul>
 				</div>
 

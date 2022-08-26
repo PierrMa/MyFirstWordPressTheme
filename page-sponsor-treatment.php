@@ -18,9 +18,10 @@
             {
                 die('Erreur : '.$e->getMessage());
             }
-            $sqlQuery = "INSERT INTO account(user_login,user_pass,amount_wagered,subscription_price,number_of_sponsored_2,number_of_sponsored_5,number_of_sponsored_10,number_of_sponsored_30,number_of_sponsored_50,number_of_sponsored_VIP) VALUES (:user_login,:user_pass,:amount_wagered,:subscription_price,:number_of_sponsored_2,:number_of_sponsored_5,:number_of_sponsored_10,:number_of_sponsored_30,:number_of_sponsored_50,:number_of_sponsored_VIP)";
+            $sqlQuery = "INSERT INTO account(month_of_subscription,user_login,user_pass,amount_wagered,subscription_price,number_of_sponsored_2,number_of_sponsored_5,number_of_sponsored_10,number_of_sponsored_30,number_of_sponsored_50,number_of_sponsored_VIP) VALUES (:month_of_subscription,:user_login,:user_pass,:amount_wagered,:subscription_price,:number_of_sponsored_2,:number_of_sponsored_5,:number_of_sponsored_10,:number_of_sponsored_30,:number_of_sponsored_50,:number_of_sponsored_VIP)";
             $inserRecipe = $mysqlClient->prepare($sqlQuery);
             $inserRecipe->execute([
+                'month_of_subscription'=>date('m'),
                 'user_login'=>$login, 
                 'user_pass'=>$password, 
                 'amount_wagered'=>0, 

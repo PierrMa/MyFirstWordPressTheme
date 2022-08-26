@@ -21,11 +21,11 @@
             <!--section to add the code to clear up the account table in the database when the time is over -->
             <div id="php"></div>
 
-            <a href="<?php echo get_field('play');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
+            <a href="<?php echo get_field('play', 'option');?>"><input type="button" value="Play!" id="playButton" style="display:block;"/></a>
         </div>
 
         <div id="account-CurrentEventContainer" style="background-image:url('<?php echo get_field('event_image');?>');">
-            <a href="<?php echo get_field('participate');?>"><input type="button" value="Participate!" id="participateButton"/></a>
+            <a href="<?php echo get_field('participate', 'option');?>"><input type="button" value="Participate!" id="participateButton"/></a>
         </div>
 
         <div class="amountBetContainer" style="background-image:url('<?php echo get_field('bet_image');?>');">
@@ -69,11 +69,11 @@
         </div>
 
         <div class="BetContainer">
-            <a href="<?php echo get_field('play');?>"><button id="increaseButton" class="pulled" style="width:380px;height:275px; text-align:center;">Increase your chances of winning!</button></a>
+            <a href="<?php echo get_field('play', 'option');?>"><button id="increaseButton" class="pulled" style="width:380px;height:275px; text-align:center;">Increase your chances of winning!</button></a>
         </div>
 
         <div class="changeSubscriptionContainer">
-            <a href="<?php echo get_field('change_subscription');?>"><button id="changeSubscriptionButton" class="pulled" style="width:380px;height:275px;text-align:center;">Subscribe!</button></a>
+            <a href="<?php echo get_field('change_subscription', 'option');?>"><button id="changeSubscriptionButton" class="pulled" style="width:380px;height:275px;text-align:center;">Subscribe!</button></a>
         </div>
     </div>
     

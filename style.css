@@ -2393,3 +2393,10 @@ div.BetContainer, div.changeSubscriptionContainer{
 #typeOfSubscriptionButton{
 	align-self: center;
 }
+
+#histogramContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+}
