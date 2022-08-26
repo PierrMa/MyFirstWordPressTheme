@@ -39,7 +39,9 @@ $graph->SetScale("textlin");
 //$graph->SetTheme(new $theme_class());
 
 // set major and minor tick positions manually
-$graph->yaxis->SetTickPositions(range(0,$maxNum,1), range(0.1,$maxNum,0.1));
+if($maxNum>0){
+    $graph->yaxis->SetTickPositions(range(0,$maxNum,1), range(0.1,$maxNum,0.1));
+}
 $graph->SetBox(false);
 
 //$graph->ygrid->SetColor('gray');

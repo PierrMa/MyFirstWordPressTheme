@@ -13,6 +13,7 @@
  */
 
 	session_start();
+	$_SESSION['sponsor']=false;
 	try{
 		$mysqlClient= new PDO('mysql:host=localhost;dbname=local;charset=utf8;port=10011','root','root');
 	}catch(Exception $e){
@@ -85,7 +86,7 @@
 					</div>
 					
 					<?php //allow to hide the sign in button if the user is already logged in
-						if(isset($_SESSION['ID'])&&isset($_SESSION['PWD'])){
+						if(isset($_SESSION['ID']) && isset($_SESSION['PWD'])){
 							$displayButton = "display:none;";
 						}else{$displayButton = "display:block;";} 
 					?>
@@ -239,7 +240,7 @@
 					</div>
 					
 					<div class="buttonContainer">
-						<button type="submit" value="Sign in" id="signInButtonMedium" formaction="<?php echo get_field('sign_in', 'option');?>">Sign in</button>
+						<button style="<?php echo $displayButton; ?>" type="submit" value="Sign in" id="signInButtonMedium" formaction="<?php echo get_field('sign_in', 'option');?>">Sign in</button>
 						<button type="submit" value="Sign up" id="signUpButtonMedium" formaction="<?php echo get_field('sign_up', 'option');?>">Sign up</button>
 					</div>
 				</form>

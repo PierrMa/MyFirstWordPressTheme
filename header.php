@@ -87,6 +87,15 @@
 			</div>
 		</div>
 		
+		<?php 
+			if(!isset($_SESSION['ID'])||!isset($_SESSION['PWD'])){
+				$displayLogOut="display:none;";
+			}else{
+				$displayLogOut="display:block;";
+			}
+		?>
+		<p style='<?php echo "text-align:right;margin-bottom:0;margin-right:2%;".$displayLogOut; ?>'><a href="http://fructicash.local/sign-out"><button id="logOutButton">Log out</button></a></p>
+
 		<!--nav>
 			<ul id="menuHeader">
 				<li><a href="#Accueil">Accueil</a></li>

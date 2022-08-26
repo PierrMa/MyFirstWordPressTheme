@@ -25,7 +25,7 @@
 <p class="successMessage">Congratulations! You have successfully subscribed to the <?php echo $_POST['fee']; ?>€/month subscription!<p>
 
 <!-- button to go to account -->
-<form action='http://fructicash.local/registered' method='post' id='yourAccountForm'>
+<form action='http://fructicash.local/mon-compte' method='post' id='yourAccountForm'>
     <button type='submit' class='messageButton'>Go To Your Account</button>
 </form>";
 

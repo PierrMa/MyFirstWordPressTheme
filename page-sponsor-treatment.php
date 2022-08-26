@@ -90,10 +90,12 @@
             get_footer();
         }else{//if the credentials are already used
             $_SESSION['used-credentials']=true;
+            $_SESSION['sponsor']=false;
             wp_redirect("http://fructicash.local/sponsor");
             exit();
         }
     }else{//if one field has not been filled
+        $_SESSION['sponsor']=false;
         wp_redirect('http://fructicash.local/sponsor');//back to the forms
         exit();
     }

@@ -11,7 +11,10 @@
     get_header(); 
 ?>
 
+<p style="color:red;font-size:1.5rem;with=100%;text-align:center;font-weight:500;">Bienvenu sur ton compte <?php echo $_SESSION['ID'];?></p><!-- Welcoming message -->
+
 <div class="accountSectionContainer">
+
     <div id="histogramContainer">
         <?php
             echo"<img src='http://fructicash.local/histogram'/>"   

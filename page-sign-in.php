@@ -26,7 +26,7 @@
                 wp_redirect("http://fructicash.local/sponsor");//let the user add a new sponsored
                 exit();
             }else{
-                header("Location: registered");//redirect the users to its account
+                wp_redirect("http://fructicash.local/mon-compte");//redirect the users to its account
                 exit();
             }
         } else {//otherwise display the form again

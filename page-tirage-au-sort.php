@@ -20,7 +20,7 @@ if(isset($_SESSION['ID']) && isset($_SESSION['PWD'])){
         ';
     }else{
         echo'<p style="text-align:center;"><br><br>Congratulation, you have just increased your chances to win by wagering <strong>'.$_POST['amountAdded'].'</strong>€<br><br></p>
-        <form action="http://fructicash.local/registered" method="post" id="yourAccountForm">
+        <form action="http://fructicash.local/mon-compte" method="post" id="yourAccountForm">
             <button type="submit" id="yourAccountButton">Back to your Account!</button>
         </form>';//to modify
 
